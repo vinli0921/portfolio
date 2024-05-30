@@ -12,9 +12,9 @@ const Approach = () => {
         </h1>
         <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card 
-            title="Planning & Strategy" 
+            title="Understanding & Planning" 
             icon={<AceternityIcon order="Phase 1"/>}
-            description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements"
+            description="I thoroughly comprehend the problem statement, clarify any doubts, and outline a clear plan using pseudocode or high-level steps."
         >
             <CanvasRevealEffect
                 animationSpeed={5.1}
@@ -22,9 +22,9 @@ const Approach = () => {
             />
         </Card>
         <Card 
-            title="Development & Progress Update" 
+            title="Implementation" 
             icon={<AceternityIcon order="Phase 2"/>}
-            description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements"
+            description="Then, I follow my plan to write clean, efficient code, and rigorously test it with various cases to ensure correctness."
         >
             <CanvasRevealEffect
                 animationSpeed={3}
@@ -38,9 +38,9 @@ const Approach = () => {
             
         </Card>
         <Card 
-            title="Development & Launch" 
+            title="Optimization & Review" 
             icon={<AceternityIcon order="Phase 3"/>}
-            description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements"
+            description="Finally, I optimize the code for performance, refactor as necessary, and seek feedback through code reviews to continually improve my solution."
         >
             <CanvasRevealEffect
                 animationSpeed={3}
