@@ -4,17 +4,17 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
 
-const Approach = () => {
+const Research = () => {
   return (
     <section className="w-full py-20">
         <h1 className="heading">
-            My <span className="text-purple">Approach</span>
+            My <span className="text-purple">Research</span>
         </h1>
         <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card 
-            title="Understanding & Planning" 
-            icon={<AceternityIcon order="Phase 1"/>}
-            description="I thoroughly comprehend the problem statement, clarify any doubts, and outline a clear plan using pseudocode or high-level steps."
+            title="Surveillance Policies as a Means for Pandemic Prevention and Monitoring" 
+            icon={<AceternityIcon order="Paper 1"/>}
+            description=""
         >
             <CanvasRevealEffect
                 animationSpeed={5.1}
@@ -131,4 +131,4 @@ export const Icon = ({ className, ...rest }: any) => {
   );
 };
 
-export default Approach;
+export default Research;
