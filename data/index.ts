@@ -48,7 +48,7 @@ export const navItems = [
   
     {
       id: 5,
-      title: "Currently developing an AI Resume Editor SaaS",
+      title: "Currently developing an AI Interview Bot to supplement the resume screening process.",
       description: "The Inside Scoop",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -74,16 +74,16 @@ export const navItems = [
       title: "Neural Network for Handwriting Detection",
       des: "Neural network project built for the UC Berkely CS 188 course to recognize handwritten numbers.",
       img: "/nn.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "https://github.com/vinny9541/CS-188",
+      iconLists: ["/py.svg", "/tensorflowdark.svg"],
+      link: "https://github.com/vinli0921/CS-188",
     },
     {
       id: 2,
-      title: "LeVox: AI Translation ",
-      des: "A speech translator that utilizes the open source WhisperAI Library, Google Cloud TTS Library, and DeepL API.",
+      title: "RoboRecruiter: AI Interview Bot",
+      des: "AI-powered interview bot to augment resume screening, providing recruiters with a comprehensive understanding of candidates beyond traditional methods.",
       img: "/levox.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-      link: "https://github.com/vinny9541/LeAlgorithm",
+      iconLists: ["/py.svg", "/next.svg", "/ts.svg", "/tail.svg", "/supabase.svg", "/dock.svg", "/verceldark.svg"],
+      link: "https://github.com/RoboRecruiter-Organization",
     },
     {
       id: 3,
@@ -91,14 +91,14 @@ export const navItems = [
       des: "A binary image classification program determining recyclability of personal waste using Keras from Tensorflow.",
       img: "/recyclify.svg",
       iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-      link: "https://github.com/vinny9541/BostonHacks",
+      link: "https://github.com/vinli0921/BostonHacks",
     },
     {
       id: 4,
       title: "College Mart: Get More for Less",
-      des: "A discount service similiar to Honey but for restaurants targeted towards college students.",
+      des: "A platform where college students can trade, sell, or buy items with each other.",
       img: "/dishcount.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/re.svg", "/supabase.svg"],
       link: "https://github.com/SamuelLo1/college-mart",
     },
   ];
@@ -179,8 +179,8 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "AI Developer",
-      desc: "Designed and developed mutiple AI projects including image classification and NLP.",
+      title: "AI Researcher",
+      desc: "Researched under Berkeley graduates on knowledge graph traversal by LLMs to produce mathematical proofs.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
@@ -204,7 +204,7 @@ export const navItems = [
     {
       id: "1",
       img: "/git.svg",
-      link: "https://github.com/vinny9541/",
+      link: "https://github.com/vinli0921/",
     },
     {
       id: "2",
