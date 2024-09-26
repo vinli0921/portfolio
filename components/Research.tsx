@@ -17,17 +17,26 @@ const Research = () => {
             description=""
         >
             <CanvasRevealEffect
-                animationSpeed={5.1}
-                containerClassName="bg-emerald-900"
+                animationSpeed={5}
+                containerClassName="bg-black"
             />
+            <a 
+              href="https://docs.google.com/document/d/1vgChdi0EqrDK35akc66_Ym_6R_BitUT2vvaYOufJsdo/edit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 flex items-center justify-center z-30"
+            >
+              <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+              </button>
+            </a>
         </Card>
         <Card 
-            title="Implementation" 
-            icon={<AceternityIcon order="Phase 2"/>}
-            description="Then, I follow my plan to write clean, efficient code, and rigorously test it with various cases to ensure correctness."
+            title="KG Traversal with LLMs for Mathematical Proofs" 
+            icon={<AceternityIcon order="Paper 2"/>}
+            description=""
         >
             <CanvasRevealEffect
-                animationSpeed={3}
+                animationSpeed={5}
                 containerClassName="bg-black"
                 colors={[
                     [236, 72, 153],
@@ -36,17 +45,6 @@ const Research = () => {
                 dotSize={2}
             />
             
-        </Card>
-        <Card 
-            title="Optimization & Review" 
-            icon={<AceternityIcon order="Phase 3"/>}
-            description="Finally, I optimize the code for performance, refactor as necessary, and seek feedback through code reviews to continually improve my solution."
-        >
-            <CanvasRevealEffect
-                animationSpeed={3}
-                containerClassName="bg-sky-600"
-                colors={[[125, 211, 252]]}
-            />
         </Card>
       </div>
     </section>

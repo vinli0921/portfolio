@@ -16,9 +16,9 @@ const Footer = () => {
 
         <div className="flex flex-col items-center">
             <h1 className="heading lg:max-w-[45vw]">
-                I am always ready for a <span className="text-purple">challenge</span>
+                I am always open to <span className="text-purple">learn new things</span>
             </h1>
-            <p className="text-white-200 md:mt-10 my-5 text-center">Reach out to me today and let&apos;s discuss how we can solve todays problems one line of code at a time.
+            <p className="text-white-200 md:mt-10 my-5 text-center">Reach out to me today and let&apos;s connect!
             </p>
             <a href="mailto:vinli@bu.edu">
                 <MagicButton 
