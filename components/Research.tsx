@@ -31,7 +31,7 @@ const Research = () => {
             </a>
         </Card>
         <Card 
-            title="KG Traversal with LLMs for Mathematical Proofs" 
+            title="Automating Mathematical Proof Generation Using Large Language Models and Knowledge Graphs" 
             icon={<AceternityIcon order="Paper 2"/>}
             description=""
         >

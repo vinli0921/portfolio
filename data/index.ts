@@ -71,17 +71,17 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "Neural Network for Handwriting Detection",
-      des: "Neural network project built for the UC Berkely CS 188 course to recognize handwritten numbers.",
-      img: "/nn.svg",
+      title: "Automating Theorem Proving with LLMs and KGs",
+      des: "Research project on automating mathematical proof generation using large language models and knowledge graph powered retrieval augmented generation.",
+      img: "/llmproof.svg",
       iconLists: ["/py.svg", "/tensorflowdark.svg"],
-      link: "https://github.com/vinli0921/CS-188",
+      link: "https://github.com/vinli0921/LLM-Proof",
     },
     {
       id: 2,
-      title: "RoboRecruiter: AI Interview Bot",
+      title: "Talentora: AI Interview Bot",
       des: "AI-powered interview bot to augment resume screening, providing recruiters with a comprehensive understanding of candidates beyond traditional methods.",
-      img: "/levox.svg",
+      img: "/talentora.svg",
       iconLists: ["/py.svg", "/next.svg", "/ts.svg", "/tail.svg", "/supabase.svg", "/dock.svg", "/verceldark.svg"],
       link: "https://github.com/RoboRecruiter-Organization",
     },
@@ -97,7 +97,7 @@ export const navItems = [
       id: 4,
       title: "College Mart: Get More for Less",
       des: "A platform where college students can trade, sell, or buy items with each other.",
-      img: "/dishcount.svg",
+      img: "/collegemart.svg",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/re.svg", "/supabase.svg"],
       link: "https://github.com/SamuelLo1/college-mart",
     },
@@ -208,7 +208,7 @@ export const navItems = [
     },
     {
       id: "2",
-      img: "/twit.svg",
+      img: "/profile.svg",
       link: " ",
     },
     {

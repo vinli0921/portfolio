@@ -45,10 +45,15 @@ const RecentProjects = () => {
                                 ))}
                             </div>
                             
-                            <div className="flex justify-center items-center">
+                            <a 
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex justify-center items-center hover:opacity-80 transition-opacity cursor-pointer"
+                            >
                                 <p className="flex lg:text-xl md:text-xs text-sm text-purple">Checkout the Github</p>
                                 <FaLocationArrow className="ms-3" color="#CBACF9" />
-                            </div>
+                            </a>
                         </div>
                     </PinContainer>
                 </div>
