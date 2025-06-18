@@ -172,32 +172,33 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
-      title: "Frontend Engineer",
-      desc: "Assisted in the development of web-based platforms using React.js and Next.js, enhancing interactivity.",
+      title: "AI Engineer",
+      desc: "Worked with Red Hat's Ecosystem Engineering team to develop a LLM guardrails framework to prevent PII leakage and other security issues.",
       className: "md:col-span-2",
-      thumbnail: "/exp1.svg",
+      thumbnail: "/redhat.svg",
     },
     {
       id: 2,
       title: "AI Researcher",
       desc: "Researched under Berkeley graduates on knowledge graph traversal by LLMs to produce mathematical proofs.",
       className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp2.svg",
+      thumbnail: "/algoverse.svg",
     },
     {
       id: 3,
-      title: "Course Assistant",
-      desc: "Helped TAs facilitate labs, hosted office hours, graded assignments, and answered piazza inquiries.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp3.svg",
+      title: "Co-Founder",
+      desc: "Created an innovative HR technology platform that harnesses real-time generative AI to deliver interactive, human-like candidate assessments and deep talent insights.",
+      className: "md:col-span-2",
+      thumbnail: "/talentora-logo.svg",
     },
     {
       id: 4,
-      title: "Hackathon Lead Backend Developer",
-      desc: "Oversaw idea consolidation of my hackathon projects and coordinated repository contributions.",
-      className: "md:col-span-2",
-      thumbnail: "/exp4.svg",
+      title: "Course Assistant",
+      desc: "Helped TAs facilitate labs, hosted office hours, graded assignments, and answered piazza inquiries.",
+      className: "md:col-span-2", // change to md:col-span-2
+      thumbnail: "/bu.svg",
     },
+    
   ];
   
   export const socialMedia = [
@@ -208,11 +209,6 @@ export const navItems = [
     },
     {
       id: "2",
-      img: "/profile.svg",
-      link: " ",
-    },
-    {
-      id: "3",
       img: "/link.svg",
       link:"https://www.linkedin.com/in/vinli0921/",
     },
