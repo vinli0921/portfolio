@@ -44,6 +44,15 @@ const Research = () => {
                 ]}
                 dotSize={2}
             />
+            <a 
+              href="https://arxiv.org/abs/2503.11657"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 flex items-center justify-center z-30"
+            >
+              <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+              </button>
+            </a>
             
         </Card>
       </div>
