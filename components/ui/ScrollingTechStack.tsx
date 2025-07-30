@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   SiGo, 
   SiJavascript, 
@@ -56,20 +57,24 @@ const techStack: TechItem[] = [
   { name: 'Kubernetes', icon: <SiKubernetes className="w-6 h-6 text-blue-600" /> },
   { name: 'OpenShift', icon: <SiRedhatopenshift className="w-6 h-6 text-red-600" /> },
   { name: 'AWS', icon: <SiAmazonwebservices className="w-6 h-6 text-orange-400" /> },
-  { name: 'Terraform', icon: <SiTerraform className="w-6 h-6 text-purple-600" /> },
+  { name: 'Terraform', icon: <SiTerraform className="w-6 h-6" style={{ fill: '#7c3aed' }} /> },
   { name: 'YAML', icon: <SiYaml className="w-6 h-6 text-red-500" /> },
   { name: 'Unix', icon: <FaLinux className="w-6 h-6 text-gray-300" /> },
   
   // Design & Project Management
-  { name: 'Figma', icon: <SiFigma className="w-6 h-6 text-purple-500" /> },
+  { name: 'Figma', icon: <SiFigma className="w-6 h-6 text-pink-400" /> },
   { name: 'Jira', icon: <SiJira className="w-6 h-6 text-blue-600" /> },
   
   // AI/ML & Frameworks
   { name: 'TensorFlow', icon: <SiTensorflow className="w-6 h-6 text-orange-500" /> },
   { name: 'PyTorch', icon: <SiPytorch className="w-6 h-6 text-orange-500" /> },
   { name: 'Scikit-learn', icon: <SiScikitlearn className="w-6 h-6 text-orange-600" /> },
-  { name: 'Hugging Face', icon: <SiHuggingface className="w-6 h-6 bg-yellow-500" /> },
-  { name: 'OpenAI', icon: <SiOpenai className="w-6 h-6 text-green-500" /> },
+  { name: 'Hugging Face', icon: <SiHuggingface className="w-6 h-6 text-yellow-500" /> },
+  { name: 'OpenAI', icon: <SiOpenai className="w-6 h-6 text-gray-500" /> },
+  { name: 'Claude', icon: <SiClaude className="w-6 h-6 text-orange-600" /> },
+  { name: 'Meta-Llama', icon: <SiMeta className="w-6 h-6 text-blue-600" /> },
+  { name: 'vLLM', icon: '/vllm.svg' },
+  { name: 'Cursor', icon: '/cursor.svg' },
   
   // Web Frameworks
   { name: 'Next.js', icon: <SiNextdotjs className="w-6 h-6 text-white" /> },
@@ -82,23 +87,23 @@ const techStack: TechItem[] = [
   { name: 'Supabase', icon: <SiSupabase className="w-6 h-6 text-green-500" /> },
   { name: 'MySQL', icon: <SiMysql className="w-6 h-6 text-blue-600" /> },
   { name: 'MongoDB', icon: <SiMongodb className="w-6 h-6 text-green-500" /> },
-  
-  // Additional Technologies
-  { name: 'vLLM', icon: '/vllm.svg' },
-  { name: 'Cursor', icon: '/cursor.svg' },
-  { name: 'Claude', icon: <SiClaude className="w-6 h-6 text-purple-600" /> },
-  { name: 'Meta-Llama', icon: <SiMeta className="w-6 h-6 text-blue-600" /> },
+
 ];
 
 const ScrollingTechStack = () => {
-  // Create duplicated arrays for seamless looping
-  const duplicatedTechStack = [...techStack, ...techStack];
+  // Split the tech stack into two columns
+  const leftColumnTech = techStack.filter((_, index) => index % 2 === 0);
+  const rightColumnTech = techStack.filter((_, index) => index % 2 === 1);
+  
+  // Create tripled arrays for truly seamless looping
+  const tripledLeftColumn = [...leftColumnTech, ...leftColumnTech, ...leftColumnTech];
+  const tripledRightColumn = [...rightColumnTech, ...rightColumnTech, ...rightColumnTech];
 
   const renderTechIcon = (tech: TechItem) => {
     if (tech.svgPath) {
       return (
         <div className="flex items-center justify-center w-8 h-8">
-          <img
+          <Image
             src={tech.svgPath}
             alt={tech.name}
             width={24}
@@ -108,6 +113,33 @@ const ScrollingTechStack = () => {
         </div>
       );
     }
+    
+    // Special handling for SVG paths in icon property
+    if (typeof tech.icon === 'string' && tech.icon.startsWith('/')) {
+      // Apply special styling for cursor.svg to make it visible
+      const isCursorIcon = tech.icon.includes('cursor.svg');
+      const isVllmIcon = tech.icon.includes('vllm.svg');
+      
+      return (
+        <div className="flex items-center justify-center w-8 h-8">
+          <Image
+            src={tech.icon}
+            alt={tech.name}
+            width={24}
+            height={24}
+            className={`object-contain ${isCursorIcon ? 'opacity-90' : isVllmIcon ? 'opacity-80' : 'opacity-70'}`}
+            style={
+              isCursorIcon 
+                ? { filter: 'invert(1) brightness(0.7)' } 
+                : isVllmIcon 
+                ? { filter: 'brightness(0.9) contrast(1.2)' }
+                : {}
+            }
+          />
+        </div>
+      );
+    }
+    
     return tech.icon || <div className="w-6 h-6 bg-gray-500 rounded" />;
   };
 
@@ -118,20 +150,20 @@ const ScrollingTechStack = () => {
         <motion.div
           className="flex flex-col gap-3 md:gap-3 lg:gap-8"
           animate={{
-            y: ["0%", "-50%"],
+            y: ["0%", "-33.333%"],
           }}
           transition={{
             y: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 30,
               ease: "linear",
             },
           }}
         >
-          {duplicatedTechStack.slice(0, Math.ceil(duplicatedTechStack.length / 2)).map((tech, i) => (
+          {tripledLeftColumn.map((tech, i) => (
             <div
-              key={i}
+              key={`left-${i}`}
               className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base
                        rounded-lg text-center bg-[#10132E] flex items-center justify-center
                        min-h-[40px] lg:min-h-[60px] opacity-50 lg:opacity-100
@@ -149,20 +181,20 @@ const ScrollingTechStack = () => {
         <motion.div
           className="flex flex-col gap-3 md:gap-3 lg:gap-8"
           animate={{
-            y: ["-50%", "0%"],
+            y: ["-33.333%", "0%"],
           }}
           transition={{
             y: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 30,
               ease: "linear",
             },
           }}
         >
-          {duplicatedTechStack.slice(Math.ceil(duplicatedTechStack.length / 2)).map((tech, i) => (
+          {tripledRightColumn.map((tech, i) => (
             <div
-              key={i}
+              key={`right-${i}`}
               className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base
                        rounded-lg text-center bg-[#10132E] flex items-center justify-center
                        min-h-[40px] lg:min-h-[60px] opacity-50 lg:opacity-100

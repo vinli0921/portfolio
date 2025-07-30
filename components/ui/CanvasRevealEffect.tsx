@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/utils/cn";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef, useCallback } from "react";
 import * as THREE from "three";
 
 export const CanvasRevealEffect = ({
@@ -208,7 +208,7 @@ const ShaderMaterial = ({
     timeLocation.value = timestamp;
   });
 
-  const getUniforms = () => {
+  const getUniforms = useCallback(() => {
     const preparedUniforms: any = {};
 
     for (const uniformName in uniforms) {
@@ -228,18 +228,10 @@ const ShaderMaterial = ({
           preparedUniforms[uniformName] = { value: uniform.value, type: "1fv" };
           break;
         case "uniform3fv":
-          preparedUniforms[uniformName] = {
-            value: uniform.value.map((v: number[]) =>
-              new THREE.Vector3().fromArray(v)
-            ),
-            type: "3fv",
-          };
+          preparedUniforms[uniformName] = { value: uniform.value, type: "3fv" };
           break;
-        case "uniform2f":
-          preparedUniforms[uniformName] = {
-            value: new THREE.Vector2().fromArray(uniform.value),
-            type: "2f",
-          };
+        case "uniform2fv":
+          preparedUniforms[uniformName] = { value: uniform.value, type: "2fv" };
           break;
         default:
           console.error(`Invalid uniform type for '${uniformName}'.`);
@@ -247,12 +239,8 @@ const ShaderMaterial = ({
       }
     }
 
-    preparedUniforms["u_time"] = { value: 0, type: "1f" };
-    preparedUniforms["u_resolution"] = {
-      value: new THREE.Vector2(size.width * 2, size.height * 2),
-    }; // Initialize u_resolution
     return preparedUniforms;
-  };
+  }, [uniforms]);
 
   // Shader material
   const material = useMemo(() => {
@@ -279,7 +267,7 @@ const ShaderMaterial = ({
     });
 
     return materialObject;
-  }, [size.width, size.height, source]);
+  }, [source, getUniforms]);
 
   return (
     <mesh ref={ref as any}>
