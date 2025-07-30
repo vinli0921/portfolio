@@ -7,7 +7,7 @@ export const navItems = [
   export const gridItems = [
     {
       id: 1,
-      title: "I have a variety of interests including tennis, astronomy, F1, and learning foreign languages. ",
+      title: "",
       description: "",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
@@ -17,7 +17,7 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "Please reach out! I'm very flexible and open to new ideas.",
+      title: "I have a variety of interests including tennis, astronomy, F1, and learning languages.",
       description: "",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
@@ -27,7 +27,7 @@ export const navItems = [
     },
     {
       id: 3,
-      title: "My tech stack",
+      title: "My tech skills",
       description: "I constantly try to improve",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
