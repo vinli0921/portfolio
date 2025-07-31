@@ -17,7 +17,7 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "I have a variety of interests including tennis, astronomy, F1, and learning languages.",
+      title: "I have many interests including tennis, astronomy, F1, and learning languages.",
       description: "",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",

@@ -96,7 +96,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
-  }, [globeRef.current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run once on mount
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -162,6 +163,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         });
       startAnimation();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeData]);
 
   const startAnimation = () => {
@@ -203,6 +205,29 @@ export function Globe({ globeConfig, data }: WorldProps) {
   };
 
   useEffect(() => {
+    if (!globeRef.current || !data) return;
+
+    globeRef.current
+      .arcsData(data)
+      .arcStartLat((d: any) => (d as { startLat: number }).startLat)
+      .arcStartLng((d: any) => (d as { startLng: number }).startLng)
+      .arcEndLat((d: any) => (d as { endLat: number }).endLat)
+      .arcEndLng((d: any) => (d as { endLng: number }).endLng)
+      .arcColor((e: any) => (e as { color: string }).color)
+      .arcAltitude((e: any) => {
+        return (e as { arcAlt: number }).arcAlt;
+      })
+      .arcStroke((e: any) => {
+        return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
+      })
+      .arcDashLength(0.6)
+      .arcDashInitialGap((e: any) => (e as { order: number }).order * 1)
+      .arcDashGap(0.2)
+      .arcDashAnimateTime((e: any) => (e as { arcAlt: number }).arcAlt * 4000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
+
+  useEffect(() => {
     if (!globeRef.current || !globeData) return;
 
     const interval = setInterval(() => {
@@ -221,7 +246,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return () => {
       clearInterval(interval);
     };
-  }, [globeRef.current, globeData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [globeData, data.length]);
 
   return (
     <>
@@ -237,7 +263,7 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
-  }, []);
+  }, [gl, size]);
 
   return null;
 }
