@@ -204,8 +204,9 @@ const ShaderMaterial = ({
     lastFrameTime = timestamp;
 
     const material: any = ref.current.material;
-    const timeLocation = material.uniforms.u_time;
-    timeLocation.value = timestamp;
+    if (material && material.uniforms && material.uniforms.u_time) {
+      material.uniforms.u_time.value = timestamp;
+    }
   });
 
   const getUniforms = useCallback(() => {
@@ -216,22 +217,23 @@ const ShaderMaterial = ({
 
       switch (uniform.type) {
         case "uniform1f":
-          preparedUniforms[uniformName] = { value: uniform.value, type: "1f" };
+          preparedUniforms[uniformName] = { value: uniform.value };
           break;
         case "uniform3f":
           preparedUniforms[uniformName] = {
             value: new THREE.Vector3().fromArray(uniform.value),
-            type: "3f",
           };
           break;
         case "uniform1fv":
-          preparedUniforms[uniformName] = { value: uniform.value, type: "1fv" };
+          preparedUniforms[uniformName] = { value: uniform.value };
           break;
         case "uniform3fv":
-          preparedUniforms[uniformName] = { value: uniform.value, type: "3fv" };
+          preparedUniforms[uniformName] = { 
+            value: uniform.value.map((v: number[]) => new THREE.Vector3(v[0], v[1], v[2]))
+          };
           break;
         case "uniform2fv":
-          preparedUniforms[uniformName] = { value: uniform.value, type: "2fv" };
+          preparedUniforms[uniformName] = { value: uniform.value };
           break;
         default:
           console.error(`Invalid uniform type for '${uniformName}'.`);
@@ -239,8 +241,11 @@ const ShaderMaterial = ({
       }
     }
 
+    preparedUniforms.u_time = { value: 0.0 };
+    preparedUniforms.u_resolution = { value: new THREE.Vector2(size.width, size.height) };
+
     return preparedUniforms;
-  }, [uniforms]);
+  }, [uniforms, size.width, size.height]);
 
   // Shader material
   const material = useMemo(() => {

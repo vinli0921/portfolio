@@ -6,15 +6,15 @@ import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
 
 const Research = () => {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20" id="research">
         <h1 className="heading">
             My <span className="text-purple">Research</span>
         </h1>
         <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card 
             title="Surveillance Policies as a Means for Pandemic Prevention and Monitoring" 
-            icon={<AceternityIcon order="Paper 1"/>}
-            description=""
+            icon={<AceternityIcon order="Capstone Paper"/>}
+            description="Policy analysis exploring the ethical and practical implications of surveillance technology in public health response"
         >
             <CanvasRevealEffect
                 animationSpeed={5}
@@ -32,8 +32,8 @@ const Research = () => {
         </Card>
         <Card 
             title="Automating Mathematical Proof Generation Using Large Language Models and Knowledge Graphs" 
-            icon={<AceternityIcon order="Paper 2"/>}
-            description=""
+            icon={<AceternityIcon order="ICML and NAACL"/>}
+            description="Novel approach combining LLMs with knowledge graph traversal for automated theorem proving - advancing AI reasoning capabilities"
         >
             <CanvasRevealEffect
                 animationSpeed={5}
